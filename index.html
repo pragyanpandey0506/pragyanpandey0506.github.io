@@ -1,152 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Pragyan Pandey — Curriculum Vitae</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Curriculum Vitae of Pragyan Pandey">
+  <meta charset="UTF-8" />
+  <title>Pragyan Pandey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      --text-color: #222;
+      --text-color: #111;
       --muted-text: #555;
-      --accent: #333;
-      --border-color: #ddd;
+      --accent: #0056b3;
+      --section-rule: #ddd;
+      --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text-color);
-      background: #fafafa;
       margin: 0;
       padding: 0;
+      font-family: var(--font-body);
+      color: var(--text-color);
+      background-color: #f9f9fb;
     }
 
     .page {
       max-width: 900px;
-      margin: 2rem auto 3rem auto;
-      padding: 0 1.25rem;
-      background: #fff;
-      box-shadow: 0 0 18px rgba(0, 0, 0, 0.04);
-      border-radius: 6px;
-      border: 1px solid #eee;
+      margin: 32px auto;
+      padding: 24px 20px 40px;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      border-radius: 8px;
     }
 
     header {
-      padding: 1.5rem 0 0.75rem 0;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--section-rule);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
     }
 
     h1 {
+      margin: 0;
       font-size: 2rem;
-      margin: 0 0 0.25rem 0;
+      letter-spacing: 0.03em;
     }
 
-    .subtitle {
-      margin: 0.1rem 0;
+    .title-line {
+      margin-top: 4px;
+      font-size: 0.95rem;
       color: var(--muted-text);
-      font-size: 0.98rem;
     }
 
     .contact {
-      margin-top: 0.35rem;
+      margin-top: 4px;
       font-size: 0.95rem;
     }
 
     .contact a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+    }
+
+    .contact a:hover {
+      border-bottom-style: solid;
+    }
+
+    .updated {
+      text-align: right;
+      font-size: 0.8rem;
+      color: var(--muted-text);
+      margin-top: -8px;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      margin: 20px 0 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      font-weight: 700;
+    }
+
+    hr.section-rule {
+      border: 0;
+      border-top: 1px solid var(--section-rule);
+      margin: 0 0 10px;
+    }
+
+    .entry {
+      margin-bottom: 12px;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 4px;
+      font-weight: 600;
+    }
+
+    .entry-header span.location {
+      font-weight: 400;
+      color: var(--muted-text);
+      font-size: 0.9rem;
+    }
+
+    .entry-subheader {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 4px;
+      font-size: 0.9rem;
+      margin-top: 2px;
+      color: var(--muted-text);
+    }
+
+    .role-title {
+      font-style: italic;
+    }
+
+    .date-range {
+      white-space: nowrap;
+    }
+
+    ul {
+      margin: 4px 0 0 1.1rem;
+      padding-left: 0;
+      font-size: 0.9rem;
+    }
+
+    li {
+      margin-bottom: 3px;
+    }
+
+    a {
       color: var(--accent);
       text-decoration: none;
     }
 
-    .contact a:hover {
+    a:hover {
       text-decoration: underline;
     }
 
-    main {
-      padding: 1.25rem 0 2rem 0;
+    .inline-list {
+      font-size: 0.9rem;
+      margin-top: 2px;
     }
 
-    h2 {
-      font-size: 1.2rem;
-      margin-top: 1.75rem;
-      margin-bottom: 0.35rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-weight: 700;
-    }
-
-    h2 + hr {
-      border: none;
-      border-top: 1px solid var(--border-color);
-      margin: 0.35rem 0 0.75rem 0;
-    }
-
-    p {
-      margin: 0.25rem 0 0.4rem 0;
-      line-height: 1.5;
-      font-size: 0.95rem;
-    }
-
-    .item {
-      margin-bottom: 0.75rem;
-    }
-
-    .item-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 0.25rem 1rem;
-      font-size: 0.96rem;
-    }
-
-    .item-header .org {
+    .inline-list span.label {
       font-weight: 600;
     }
 
-    .item-header .location {
-      font-weight: 400;
-      color: var(--muted-text);
+    .subsection-title {
+      font-weight: 600;
+      margin-top: 4px;
     }
 
-    .item-header .date {
-      font-size: 0.9rem;
-      color: var(--muted-text);
-      white-space: nowrap;
-    }
-
-    .role {
-      font-style: italic;
-      font-size: 0.94rem;
-      margin-top: 0.15rem;
-    }
-
-    ul {
-      margin: 0.25rem 0 0.5rem 1.1rem;
-      padding-left: 0.9rem;
-    }
-
-    li {
-      margin-bottom: 0.25rem;
-      font-size: 0.94rem;
-      line-height: 1.45;
-    }
-
-    .course-list {
-      font-size: 0.94rem;
-    }
-
-    .small-note {
-      font-size: 0.9rem;
-      color: var(--muted-text);
-    }
-
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       .page {
-        margin-top: 0.75rem;
+        margin: 0;
         border-radius: 0;
         box-shadow: none;
-        border-left: none;
-        border-right: none;
+      }
+
+      .entry-header,
+      .entry-subheader {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .updated {
+        text-align: left;
       }
     }
   </style>
@@ -155,406 +181,407 @@
   <div class="page">
     <header>
       <h1>Pragyan Pandey</h1>
-      <p class="subtitle">
-        Staff Research Associate I, Department of Physics, University of California, Berkeley, USA
-      </p>
-      <p class="contact">
+      <div class="title-line">
+        Staff Research Associate&nbsp;I, Department of Physics, University of California, Berkeley, USA
+      </div>
+      <div class="contact">
         <a href="mailto:pragyanpandey05@berkeley.edu">pragyanpandey05@berkeley.edu</a>
         &nbsp;|&nbsp;
         <a href="tel:+13412533944">+1&nbsp;341&nbsp;253&nbsp;3944</a>
-      </p>
-      <p class="small-note">Last updated: November 2025</p>
+      </div>
     </header>
+    <div class="updated">Updated: November&nbsp;2025</div>
 
-    <main>
-      <!-- RESEARCH INTERESTS -->
-      <section>
-        <h2>Research Interests</h2>
-        <hr>
-        <p>
-          Quantum microwave–optical transduction; optomechanical and phononic crystals; topological mechanical qubits;
-          fractional quantum Hall physics in phononic lattices; neuromorphic and physical learning with transistor networks;
-          scientometrics of physics research.
-        </p>
-      </section>
-
-      <!-- EDUCATION -->
-      <section>
-        <h2>Education</h2>
-        <hr>
-
-        <div class="item">
-          <div class="item-header">
-            <div>
-              <span class="org">University of California, Berkeley</span>,
-              <span class="location">Berkeley, CA, USA</span>
-            </div>
-            <div class="date">Aug 2019 – May 2021; Jan 2024 – May 2025</div>
+    <!-- EDUCATION -->
+    <section>
+      <h2>Education</h2>
+      <hr class="section-rule" />
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            University of California, Berkeley
+            <span class="location"> &mdash; Berkeley, CA, USA</span>
           </div>
-          <p><strong>Bachelor of Arts in Physics</strong></p>
-          <p>Cumulative GPA: 3.96/4.00; Physics Major GPA: 3.97/4.00</p>
-          <p>Honors in Physics; Highest Honors; High Distinction in General Scholarship</p>
-          <p class="course-list">
-            <strong>Selected Upper-Division / Graduate Courses:</strong>
-            Modern Atomic Physics / Quantum Optics (Physics 238A); Solid State Physics (Physics 141A/B);
-            Statistical Mechanics (Physics 112); Quantum Mechanics (Physics 137A/B); Electrodynamics (Physics 110A);
-            Classical and Analytical Mechanics (Physics 105); Advanced Laboratory / Electronics (Physics 111A/B);
-            Mathematical Physics (Physics 89).
-          </p>
+          <div class="date-range">Aug 2019 &ndash; May 2021; Jan 2024 &ndash; May 2025</div>
         </div>
-      </section>
+        <div class="inline-list">
+          <span class="label">Degree:</span> Bachelor of Arts in Physics
+        </div>
+        <div class="inline-list">
+          <span class="label">GPA:</span> Cumulative 3.96 / 4.00; Physics major 3.97 / 4.00
+        </div>
+        <div class="inline-list">
+          <span class="label">Honors:</span> Honors in Physics; Highest Honors; High Distinction in General Scholarship
+        </div>
+        <div class="inline-list">
+          <span class="label">Selected upper division / graduate courses:</span>
+          Modern Atomic Physics / Quantum Optics (Physics&nbsp;238A); Solid State Physics (Physics&nbsp;141A/B);
+          Statistical Mechanics (Physics&nbsp;112); Quantum Mechanics (Physics&nbsp;137A/B);
+          Electrodynamics (Physics&nbsp;110A); Classical and Analytical Mechanics (Physics&nbsp;105);
+          Advanced Laboratory / Electronics (Physics&nbsp;111A/B).
+        </div>
+      </div>
+    </section>
 
-      <!-- ACADEMIC EXPERIENCE -->
-      <section>
-        <h2>Academic Experience</h2>
-        <hr>
+    <!-- ACADEMIC EXPERIENCE -->
+    <section>
+      <h2>Academic Experience</h2>
+      <hr class="section-rule" />
 
-        <div class="item">
-          <div class="item-header">
-            <div>
-              <span class="org">Ma Lab, Department of Physics, UC Berkeley</span>,
-              <span class="location">Berkeley, CA, USA</span>
-            </div>
-            <div class="date">May 2025 – Present</div>
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <a href="https://sites.google.com/berkeley.edu/ma-lab/home" target="_blank" rel="noopener noreferrer">
+              Ma Lab
+            </a>, Department of Physics, UC Berkeley
+            <span class="location"> &mdash; Berkeley, CA, USA</span>
           </div>
-          <p class="role">Staff Research Associate (Physical Learning / Neuromorphic Circuits)</p>
-          <ul>
-            <li>
-              Developed a SPICE-accurate simulation framework (PyCLLN) for contrastive local learning networks (CLLNs),
-              transistor circuits that have demonstrated emergent learning with the ability to learn nonlinear tasks.
-            </li>
-            <li>
-              Explored implementations for moderate- to large-scale networks with 1000+ transistors (compared to 32 shown
-              previously in the lab) and demonstrated image-classification capabilities, including reduced-MNIST
-              classification with &gt;98% accuracy.
-            </li>
-            <li>
-              Characterized learning dynamics for networks by analyzing the impact of features like NMOS transistor
-              nonlinearities, voltage mappings, cost functions, and circuit connectivity, to present implementable
-              experimental insights.
-            </li>
-          </ul>
         </div>
-
-        <div class="item">
-          <div class="item-header">
-            <div>
-              <span class="org">Quantum Devices Group (Sipahigil Lab), UC Berkeley</span>,
-              <span class="location">Berkeley, CA, USA</span>
-            </div>
-            <div class="date">May 2024 – Aug 2025</div>
+        <div class="entry-subheader">
+          <div class="role-title">
+            Staff Research Associate (Physical Learning / Neuromorphic Circuits)
           </div>
-          <p class="role">Student Assistant / Undergraduate Researcher (Quantum Engineering / Quantum Electromechanics)</p>
-          <ul>
-            <li>
-              Developed a three-mode microwave–mechanical–optical transducer architecture based on a two-dimensional
-              optomechanical crystal cavity coupled to a TiN-on-silicon surface-acoustic-wave resonator via interface
-              piezoelectricity, enabling long-distance communication between superconducting-qubit platforms by coherently
-              converting between GHz microwaves and telecom-band photons.
-            </li>
-            <li>
-              Used COMSOL Multiphysics to compute optical and mechanical band structures and localized defect modes, and
-              optimized cavity, waveguide, and phononic-shield geometries for large optomechanical coupling rate g<sub>om</sub>
-              and high mechanical quality factor Q<sub>m</sub>, while co-designing the electromechanical region for strong
-              coupling g<sub>em</sub> under realistic fabrication constraints.
-            </li>
-            <li>
-              Obtained a transducer design supporting a mechanical mode at 7.5&nbsp;GHz and an optical mode at 198&nbsp;THz,
-              with simulated optomechanical coupling g<sub>om</sub> ≈ 900&nbsp;kHz and electromechanical coupling
-              g<sub>em</sub> ≈ 70&nbsp;kHz, indicating the potential for high-efficiency microwave–optical conversion.
-            </li>
-            <li>
-              Assisted with experimental infrastructure in the lab, including assisting installation of a dilution refrigerator
-              and constructing an acoustic and vibration-damping enclosure for the cryostat compressor.
-            </li>
-          </ul>
+          <div class="date-range">May 2025 &ndash; Present</div>
         </div>
-
-        <div class="item">
-          <div class="item-header">
-            <div>
-              <span class="org">Department of Physics, UC Berkeley</span>,
-              <span class="location">Berkeley, CA, USA</span>
-            </div>
-            <div class="date">Aug 2024 – May 2025</div>
-          </div>
-          <p class="role">Graduate Student Instructor (Physics 7A); Peer Tutor Scholar (Physics 112)</p>
-          <ul>
-            <li>
-              Led discussion sections, office hours, and exam/homework grading for Physics 7A (introductory mechanics).
-            </li>
-            <li>
-              Provided tutoring and review sessions for Physics 112 (Statistical Mechanics).
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section>
-        <h2>Projects</h2>
-        <hr>
-
-        <div class="item">
-          <div class="item-header">
-            <div class="org">Fractional Quantum Hall Effect in a Phononic Harper–Hofstadter Lattice</div>
-            <div class="date">2025 – Present</div>
-          </div>
-          <ul>
-            <li>
-              Formulated a theoretical platform to realize fractional quantum Hall states in a two-dimensional phononic
-              lattice implementing the Harper–Hofstadter model for mechanical modes.
-            </li>
-            <li>
-              Derived and analyzed a tight-binding description with synthetic magnetic flux and explored coupling strategies
-              to microwave circuits and optical cavities for state preparation and readout.
-            </li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <div class="item-header">
-            <div class="org">Inverse Design of Phononic Bandgap Shields Using Adjoint Optimization</div>
-            <div class="date">2024 – 2025</div>
-          </div>
-          <ul>
-            <li>
-              Built finite-element band-structure models of rectangular phononic bandgap shields in silicon frames and
-              reproduced literature phononic bandgaps used to suppress clamping losses and enhance mechanical Q in membrane
-              resonators.
-            </li>
-            <li>
-              Implemented a gradient-based optimization loop (finite-difference sensitivities with SLSQP) over lattice constant
-              and cross dimensions to steer the phononic bandgap toward target resonator frequencies (e.g., 5.4 and 7&nbsp;GHz),
-              demonstrating that the shield geometry can be systematically tuned rather than selected by trial and error.
-            </li>
-            <li>
-              Designed an adjoint-based optimization workflow to maximize normalized bandgap width subject to fabrication
-              constraints, with the goal of integrating optimized shields into microwave–optical transducers to increase
-              Q·f and reduce radiation loss from the mechanical mode.
-            </li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <div class="item-header">
-            <div class="org">
-              Mechanical Qubit Based on Topologically Protected Helical Edge States<br>
-              in Snowflake Phononic Crystal
-            </div>
-            <div class="date">2024 – 2025</div>
-          </div>
-          <ul>
-            <li>
-              Analyzed a snowflake phononic crystal as a valley-Hall topological insulator by deriving an effective Dirac
-              Hamiltonian with a symmetry-breaking mass term and computing valley Chern numbers that predict helical edge
-              modes at domain walls.
-            </li>
-            <li>
-              Defined logical qubit states in terms of single-phonon occupation of counter-propagating edge modes and derived
-              the electromechanical coupling Hamiltonian between those modes and superconducting transmon qubits in both
-              dispersive and resonant Jaynes–Cummings regimes, including induced Kerr nonlinearities and swap operations.
-            </li>
-            <li>
-              Developed an optomechanical readout scheme in which a co-localized optical cavity discriminates clockwise and
-              counterclockwise edge excitations via mode-dependent sideband signals under homodyne detection, and analyzed
-              symmetry-breaking perturbations required to lift mode degeneracy during measurement.
-            </li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <div class="item-header">
-            <div class="org">
-              Century-Scale Map of Physics via Retroactive PhySH Annotation of the APS Corpus
-            </div>
-            <div class="date">2025 – Present</div>
-          </div>
-          <ul>
-            <li>
-              Designed a large-scale pipeline that uses taxonomy-aware prompting of large language models, strict schema
-              validation, and canonical normalization to assign PhySH disciplines and faceted concepts to ~7.8 × 10<sup>5</sup>
-              APS papers from 1893–2022, producing a century-scale subject map of physics.
-            </li>
-            <li>
-              Constructed time series of discipline and concept frequencies and co-occurrence networks to recover canonical
-              disciplinary arcs (e.g., nuclear and particle surges, condensed-matter dominance, persistent AMO), quantify
-              rising interdisciplinarity, and study concept lifecycles ranging from long-lived methods (e.g., DFT, Monte Carlo)
-              to punctuated frontier topics (e.g., superconductivity, quantum information, 2D materials).
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- PUBLICATIONS & MANUSCRIPTS -->
-      <section>
-        <h2>Publications &amp; Manuscripts</h2>
-        <hr>
-
-        <p><strong>Manuscripts in Preparation</strong></p>
         <ul>
           <li>
-            P. Pandey, P. Wu, D. Alyahya, and E. Y. Ma,
-            “Contrastive Local Learning Networks: A SPICE-Accurate Simulation Framework with Validation,
-            Predictive Frontiers, and Design Guidance”.
+            Developed a SPICE-accurate simulation framework (PyCLLN) for contrastive local learning networks (CLLNs),
+            transistor circuits that have shown emergent learning on nonlinear tasks; implemented large-scale networks
+            with more than 2000 transistors and demonstrated image-classification capabilities for these networks,
+            including reduced-MNIST classification with more than 98% accuracy.
           </li>
           <li>
-            P. Pandey, K. Gödeneli, and A. Sipahigil,
-            “Optimized Microwave-to-Optical Transducer for Optical Quantum Communication”.
-          </li>
-          <li>
-            K. Nguyen, P. Pandey, S. Li, and E. Y. Ma,
-            “A Century-Scale Map of Physics: Retroactive PhySH Annotation of the APS Corpus with Generative Models”.
+            Characterized learning dynamics by analyzing the impact of NMOS transistor nonlinearities, voltage mappings,
+            cost functions, and circuit connectivity to extract implementable experimental design insights.
           </li>
         </ul>
+      </div>
 
-        <p><strong>Completed Honors Thesis</strong></p>
-        <ul>
-          <li>
-            P. Pandey, “Optimized Microwave-to-Optical Transducer for Optical Quantum Communication,”
-            Senior Honors Thesis, Department of Physics, University of California, Berkeley, May 2025.
-            <!-- Update the href once you upload the PDF to the repo -->
-            <!-- Example: <a href="pandey_honors_thesis_2025.pdf" target="_blank" rel="noopener">[PDF]</a> -->
-          </li>
-        </ul>
-
-        <p><strong>Research Proposals</strong></p>
-        <ul>
-          <li>
-            Mechanical Qubit Based on Topologically Protected Helical Edge States in Snowflake Phononic Crystal.
-            <!-- Example: <a href="snowflake_qubit_proposal.pdf" target="_blank" rel="noopener">[PDF]</a> -->
-          </li>
-          <li>
-            Inverse Design of Phononic Bandgap Shields Using Adjoint Optimization.
-            <!-- Example: <a href="phononic_inverse_design_proposal.pdf" target="_blank" rel="noopener">[PDF]</a> -->
-          </li>
-        </ul>
-      </section>
-
-      <!-- CONFERENCE PRESENTATIONS -->
-      <section>
-        <h2>Conference Presentations</h2>
-        <hr>
-
-        <div class="item">
-          <p>
-            <strong>Berkeley Physics Undergraduate Research Symposium (BPURS)</strong>,
-            Berkeley, CA, USA (Poster, Spring 2025)<br>
-            <em>Optimized Microwave-to-Optical Transducer for Optical Quantum Communication</em>
-          </p>
-        </div>
-      </section>
-
-      <!-- OTHER EXPERIENCES -->
-      <section>
-        <h2>Other Experiences</h2>
-        <hr>
-
-        <div class="item">
-          <div class="item-header">
-            <div>
-              <span class="org">Saarathi</span>,
-              <span class="location">New Delhi, India</span>
-            </div>
-            <div class="date">Jun 2021 – Dec 2023</div>
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <a href="https://quantumdevices.berkeley.edu/" target="_blank" rel="noopener noreferrer">
+              Quantum Devices Group (Sipahigil Lab)
+            </a>, UC Berkeley
+            <span class="location"> &mdash; Berkeley, CA, USA</span>
           </div>
-          <p class="role">Founder &amp; Managing Director</p>
-          <ul>
-            <li>
-              Founded a technology-driven social impact venture delivering digital and AI/ML solutions to
-              development-sector organizations and government agencies.
-            </li>
-            <li>
-              Recruited and led a team of 20+ professionals; managed operations, strategy, finances, and
-              stakeholder relationships.
-            </li>
-            <li>
-              Led projects including:
-              <ul>
-                <li>
-                  <strong>Delhi Jal Board:</strong> complaint resolution mechanism and OCR-based billing services
-                  for millions of customers; designed water-theft detection ML algorithms.
-                </li>
-                <li>
-                  <strong>Desh Ke Mentor:</strong> infrastructure for a large-scale mentoring program serving over
-                  one million students.
-                </li>
-                <li>
-                  <strong>Delhi Police:</strong> database and multi-tier portal system for tracking proclaimed
-                  offenders across numerous precincts.
-                </li>
-              </ul>
-            </li>
-          </ul>
         </div>
-
-        <div class="item">
-          <div class="item-header">
-            <div>
-              <span class="org">Berkeley Student Cooperative (BSC)</span>,
-              <span class="location">Berkeley, CA, USA</span>
-            </div>
-            <div class="date">2020 – Present</div>
+        <div class="entry-subheader">
+          <div class="role-title">
+            Student Assistant &amp; Undergraduate Researcher (Quantum Engineering / Quantum Electromechanics)
           </div>
-          <p class="role">Board Director; Ridge House President; Conduct Member Advisor (CMA)</p>
-          <ul>
-            <li>
-              Served on the BSC Board and as house president, overseeing governance, budgeting, and conflict resolution
-              in a large cooperative household.
-            </li>
-            <li>
-              Worked as a Conduct Member Advisor on Tier 2–3 conduct cases, helping interpret policy and structure
-              educational and restorative outcomes while protecting member safety.
-            </li>
-          </ul>
+          <div class="date-range">May 2024 &ndash; Aug 2025</div>
         </div>
-      </section>
-
-      <!-- SKILLS -->
-      <section>
-        <h2>Skills</h2>
-        <hr>
         <ul>
           <li>
-            <strong>Programming and Data:</strong>
-            Python (NumPy, SciPy, Matplotlib, pandas), Jupyter, basic scikit-learn; NetworkX; shell scripting.
+            Designed a three-mode microwave&ndash;mechanical&ndash;optical transducer combining a TiN-on-silicon
+            surface-acoustic-wave resonator (via interface piezoelectricity) with a two-dimensional optomechanical
+            crystal cavity to coherently convert GHz microwave excitations from superconducting qubits into telecom-band
+            photons for long-distance links.
           </li>
           <li>
-            <strong>Simulation and Modeling:</strong>
-            COMSOL Multiphysics; NgSpice/Xyce and SPICE; ANSYS HFSS; QuTiP; GDS.
+            Used COMSOL to compute optical and mechanical band structures and localized defect modes, and to optimize
+            cavity, waveguide, phononic-shield, and electromechanical geometries; identified a transducer design
+            supporting a 7.5&nbsp;GHz mechanical defect mode and a 198&nbsp;THz optical mode with
+            g<sub>om</sub> &gt; 900&nbsp;kHz and g<sub>em</sub> &gt; 70&nbsp;kHz, indicative of high-efficiency
+            microwave&ndash;optical conversion.
           </li>
           <li>
-            <strong>Tools and Documentation:</strong>
-            LaTeX/Overleaf, Git; scientific figure preparation and manuscript drafting.
-          </li>
-          <li>
-            <strong>Soft Skills:</strong>
-            Teaching and mentoring; technical communication; project management; cross-functional collaboration.
+            Contributed to experimental infrastructure by helping install a dilution refrigerator, manufacturing SMA
+            cables, and building an acoustic and vibration-damping enclosure for the cryostat compressor.
           </li>
         </ul>
-      </section>
+      </div>
 
-      <!-- REFERENCES -->
-      <section>
-        <h2>References</h2>
-        <hr>
-        <p>
-          <strong>Prof. Alp Sipahigil</strong><br>
-          Assistant Professor, Department of Physics, University of California, Berkeley<br>
-          E-mail: <a href="mailto:alp@berkeley.edu">alp@berkeley.edu</a>
-        </p>
-        <p>
-          <strong>Prof. Eric Ma</strong><br>
-          Assistant Professor, Department of Physics, University of California, Berkeley<br>
-          E-mail: <a href="mailto:eric.y.ma@berkeley.edu">eric.y.ma@berkeley.edu</a>
-        </p>
-        <p>
-          <strong>Mr. Garvit Goswami</strong><br>
-          Director, Saarathi<br>
-          E-mail: <a href="mailto:garvit.goswami@bain.com">garvit.goswami@bain.com</a>
-        </p>
-      </section>
-    </main>
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            Department of Physics, UC Berkeley
+            <span class="location"> &mdash; Berkeley, CA, USA</span>
+          </div>
+        </div>
+        <div class="entry-subheader">
+          <div class="role-title">
+            Graduate Student Instructor (Physics 7A); Peer Tutor Scholar (Physics 112)
+          </div>
+          <div class="date-range">Aug 2024 &ndash; May 2025</div>
+        </div>
+        <ul>
+          <li>
+            Led discussion sections, office hours, and exam / homework grading for Physics&nbsp;7A (Introductory
+            Mechanics).
+          </li>
+          <li>Provided tutoring and review sessions for Physics&nbsp;112 (Statistical Mechanics).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+      <h2>Projects</h2>
+      <hr class="section-rule" />
+
+      <div class="entry">
+        <div class="entry-header">
+          <div>Quantum Phononic Simulator for Harper&ndash;Hofstadter&ndash;Hubbard Physics</div>
+          <div class="date-range">2025 &ndash; Present</div>
+        </div>
+        <ul>
+          <li>
+            Initiated a collaboration with members of the Zaletel group (UC Berkeley) to design a chip-scale quantum
+            electromechanical platform where high-Q nonlinear (Lennard&ndash;Jones) mechanical resonators realize
+            interacting bosons, microwave resonators with phase-programmable drives generate a two-dimensional
+            Harper&ndash;Hofstadter lattice with synthetic magnetic flux, and phononic crystals provide acoustic
+            bandgaps and robust phonon confinement.
+          </li>
+          <li>
+            Derived the effective microwave-mediated electromechanical Hamiltonian and mean-field dynamics, and analyzed
+            how drive phases and coupling strengths can be tuned to generate Chern bands and Harper&ndash;Hofstadter&ndash;Hubbard
+            physics targeting fractional Chern insulator analogues of fractional quantum Hall states.
+          </li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div>Inverse Design of Phononic Bandgap Shields Using Adjoint Optimization</div>
+          <div class="date-range">2024 &ndash; 2025</div>
+        </div>
+        <ul>
+          <li>
+            Built finite-element band-structure models of silicon-based phononic bandgap shields and implemented a
+            gradient-based optimization loop (finite-difference sensitivities with SLSQP) over lattice constant and
+            shield dimensions to steer bandgaps toward target resonator frequencies, replacing trial-and-error geometry
+            tuning.
+          </li>
+          <li>
+            Formulated an adjoint-based topology-optimization workflow that enables free optimization of the
+            phononic-shield design space beyond tuning a small set of predefined geometric parameters.
+          </li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            Mechanical Qubit Based on Topologically Protected Helical Edge States in Snowflake Phononic Crystal
+          </div>
+          <div class="date-range">2024 &ndash; 2025</div>
+        </div>
+        <ul>
+          <li>
+            Proposed a mechanical qubit that encodes logical states in helical edge modes of a snowflake phononic
+            crystal (Brendel <i>et al.</i>, 2017), leveraging its established valley-Hall Dirac / valley-Chern
+            description to obtain edge modes robust against backscattering.
+          </li>
+          <li>
+            Derived the electromechanical coupling Hamiltonian between these edge modes and superconducting transmon
+            qubits in both dispersive and resonant Jaynes&ndash;Cummings regimes, and analyzed the resulting Kerr shifts
+            and coherent swap operations.
+          </li>
+          <li>
+            Designed an optomechanical readout scheme where a co-localized optical cavity and pulsed homodyne detection
+            distinguish clockwise versus counterclockwise edge excitations via mode-dependent sideband signals, and
+            analyzed how weak DC acoustic perturbations can lift their degeneracy during measurement.
+          </li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div>Century-Scale Map of Physics via Retroactive PhySH Annotation of the APS Corpus</div>
+          <div class="date-range">2025 &ndash; Present</div>
+        </div>
+        <ul>
+          <li>
+            Mentored an undergraduate researcher and co-designed a pipeline using taxonomy-guided large language model
+            prompting, strict schema validation, and canonical normalization to assign PhySH disciplines and up to five
+            concepts to roughly 7.8 &times; 10<sup>5</sup> legacy APS articles (1893&ndash;2022), yielding a continuous
+            century-scale subject map of physics.
+          </li>
+          <li>
+            Analyzed discipline and concept time series and cross-field couplings to recover canonical disciplinary arcs
+            (nuclear and particle surges, condensed-matter dominance, persistent AMO), quantify rising
+            interdisciplinarity, and distinguish long-lived methods (Monte Carlo, DFT, spectroscopy) from punctuated
+            frontiers (superconductivity, quantum computing, two-dimensional materials).
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section>
+      <h2>Publications &amp; Manuscripts</h2>
+      <hr class="section-rule" />
+
+      <div class="subsection-title">Manuscripts in preparation</div>
+      <ul>
+        <li>
+          P. Pandey, P. Wu, D. Alyahya, and E. Y. Ma,
+          <i>Contrastive Local Learning Networks: A SPICE-Accurate Simulation Framework with Validation, Predictive
+            Frontiers, and Design Guidance</i>.
+        </li>
+        <li>
+          P. Pandey, K. Godeneli, and A. Sipahigil,
+          <i>Optimized Microwave-to-Optical Transducer for Optical Quantum Communication</i>.
+        </li>
+        <li>
+          K. Nguyen, P. Pandey, S. Li, and E. Y. Ma,
+          <i>A Century-Scale Map of Physics: Retroactive PhySH Annotation of the APS Corpus with Generative Models</i>.
+        </li>
+      </ul>
+
+      <div class="subsection-title">Completed honors thesis</div>
+      <ul>
+        <li>
+          P. Pandey,
+          <i>Optimized Microwave-to-Optical Transducer for Optical Quantum Communication</i>, Senior Honors Thesis,
+          Department of Physics, University of California, Berkeley, May 2025.
+          <a href="https://drive.google.com/file/d/1Hne5tabEmKyYCl0LPMgyXLKk9kD7pAhx/view?usp=sharing"
+             target="_blank" rel="noopener noreferrer">[PDF]</a>
+        </li>
+      </ul>
+
+      <div class="subsection-title">Research proposals</div>
+      <ul>
+        <li>
+          <i>Mechanical Qubit Based on Topologically Protected Helical Edge States in Snowflake Phononic Crystal</i>
+          <a href="https://drive.google.com/file/d/1jUjEgHxACWK5tulp1waOK-fJ_EkLGltZ/view?usp=sharing"
+             target="_blank" rel="noopener noreferrer">[PDF]</a>
+        </li>
+        <li>
+          <i>Inverse Design of Phononic Bandgap Shields Using Adjoint Optimization</i>
+          <a href="https://drive.google.com/file/d/1-sEG0xRoB-wPxQyl7_CVC-sin5eAo4aU/view?usp=sharing"
+             target="_blank" rel="noopener noreferrer">[PDF]</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CONFERENCE PRESENTATIONS -->
+    <section>
+      <h2>Conference Presentations</h2>
+      <hr class="section-rule" />
+
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            Berkeley Physics Undergraduate Research Symposium (BPURS)
+            <span class="location"> &mdash; Berkeley, CA, USA</span>
+          </div>
+          <div class="date-range">Poster, Spring 2025</div>
+        </div>
+        <div class="inline-list">
+          <i>Optimized Microwave-to-Optical Transducer for Optical Quantum Communication</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- OTHER EXPERIENCES -->
+    <section>
+      <h2>Other Experiences</h2>
+      <hr class="section-rule" />
+
+      <div class="entry">
+        <div class="entry-header">
+          <div>Saarathi<span class="location"> &mdash; New Delhi, India</span></div>
+        </div>
+        <div class="entry-subheader">
+          <div class="role-title">Founder &amp; Managing Director</div>
+          <div class="date-range">Jun 2021 &ndash; Dec 2023</div>
+        </div>
+        <ul>
+          <li>
+            Founded and scaled a social-impact tech firm delivering solutions for public-service infrastructure,
+            securing major contracts with Delhi government agencies and development-sector organizations.
+          </li>
+          <li>
+            Recruited and led a cross-functional team of more than 20 engineers and operations staff; directed product
+            strategy, client engagement, and end-to-end delivery for high-stakes deployments.
+          </li>
+          <li>
+            Oversaw flagship projects including (1) complaint-resolution and OCR billing infrastructure for Delhi Jal
+            Board serving over 26 million customers; (2) backend and matching systems for the Desh Ke Mentor mentoring
+            program reaching over one million students; and (3) a multi-tier offender-tracking portal for Delhi Police
+            deployed across precincts.
+          </li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div>Berkeley Student Cooperative (BSC)<span class="location"> &mdash; Berkeley, CA, USA</span></div>
+        </div>
+        <div class="entry-subheader">
+          <div class="role-title">
+            Board Director; Ridge House President; Conduct Member Advisor (CMA)
+          </div>
+          <div class="date-range">Jun 2024 &ndash; Sept 2025</div>
+        </div>
+        <ul>
+          <li>
+            Served as Board Director and Ridge House President in a large student housing cooperative, overseeing house
+            governance, budgeting, workshift structures, and conflict resolution while representing members in
+            organization-wide policy and planning decisions.
+          </li>
+          <li>
+            Worked as a Conduct Member Advisor on conduct cases (including harassment, anti-bullying, and safety-related
+            complaints), helping members interpret the conduct code, organize evidence and written statements, and
+            collaborating with staff and hearing committees to craft educational and restorative outcomes that protect
+            member safety and uphold due process.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SKILLS & INTERESTS -->
+    <section>
+      <h2>Skills &amp; Interests</h2>
+      <hr class="section-rule" />
+      <ul>
+        <li>
+          <strong>Programming:</strong> Python (TensorFlow / PyTorch, Pandas / NumPy, Django, etc.), MATLAB, Java,
+          JavaScript, MySQL.
+        </li>
+        <li>
+          <strong>Simulation and modeling:</strong> COMSOL Multiphysics; NgSpice / Xyce and SPICE; ANSYS HFSS; QuTiP;
+          GDS.
+        </li>
+        <li>
+          <strong>Interests:</strong> Jazz piano; public policy; reading continental philosophy (Foucault, Weil, Lacan);
+          chess &amp; poker.
+        </li>
+      </ul>
+    </section>
+
+    <!-- REFERENCES -->
+    <section>
+      <h2>References</h2>
+      <hr class="section-rule" />
+
+      <div class="entry">
+        <div class="subsection-title">
+          <a href="https://physics.berkeley.edu/people/faculty/alp-sipahigil"
+             target="_blank" rel="noopener noreferrer">Prof. Alp Sipahigil</a>
+        </div>
+        <div>Assistant Professor, Department of Physics, University of California, Berkeley</div>
+        <div>E-mail: <a href="mailto:alp@berkeley.edu">alp@berkeley.edu</a></div>
+      </div>
+
+      <div class="entry">
+        <div class="subsection-title">
+          <a href="https://physics.berkeley.edu/people/faculty/eric-y-ma"
+             target="_blank" rel="noopener noreferrer">Prof. Eric Ma</a>
+        </div>
+        <div>Assistant Professor, Department of Physics, University of California, Berkeley</div>
+        <div>E-mail: <a href="mailto:eric.y.ma@berkeley.edu">eric.y.ma@berkeley.edu</a></div>
+      </div>
+
+      <div class="entry">
+        <div class="subsection-title">Mr. Garvit Goswami</div>
+        <div>Director, Saarathi</div>
+        <div>E-mail: <a href="mailto:garvit.goswami@bain.com">garvit.goswami@bain.com</a></div>
+      </div>
+    </section>
   </div>
 </body>
 </html>
